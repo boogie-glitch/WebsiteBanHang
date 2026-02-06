@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Quản lý Website Bán Hàng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">
+                <i class="bi bi-shop"></i> Website Bán Hàng
+            </h1>
+            <p class="lead mb-5">Hệ thống quản lý sản phẩm chuyên nghiệp và dễ sử dụng</p>
+            <a href="/products" class="btn btn-light btn-lg px-5">
+                <i class="bi bi-arrow-right-circle"></i> Bắt đầu ngay
+            </a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mb-5">
+        <h2 class="text-center mb-5 fw-bold">Tính năng chính</h2>
+        <div class="row g-4">
+            <!-- Xem danh sách sản phẩm -->
+            <div class="col-md-4">
+                <div class="card feature-card border-0 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon text-primary">
+                            <i class="bi bi-list-ul"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Danh sách sản phẩm</h4>
+                        <p class="card-text text-muted">
+                            Xem và quản lý tất cả sản phẩm của bạn trong một giao diện thân thiện
+                        </p>
+                        <a href="/products" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> Xem danh sách
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thêm sản phẩm mới -->
+            <div class="col-md-4">
+                <div class="card feature-card border-0 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon text-success">
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Thêm sản phẩm</h4>
+                        <p class="card-text text-muted">
+                            Thêm sản phẩm mới nhanh chóng với form đơn giản và trực quan
+                        </p>
+                        <a href="/products/new" class="btn btn-success">
+                            <i class="bi bi-plus-lg"></i> Thêm mới
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tìm kiếm -->
+            <div class="col-md-4">
+                <div class="card feature-card border-0 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon text-info">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Tìm kiếm</h4>
+                        <p class="card-text text-muted">
+                            Tìm kiếm sản phẩm theo tên hoặc danh mục một cách nhanh chóng
+                        </p>
+                        <a href="/products" class="btn btn-info text-white">
+                            <i class="bi bi-search"></i> Tìm kiếm
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-light border-0">
+                    <div class="card-body p-5">
+                        <h3 class="text-center mb-4">
+                            <i class="bi bi-lightning-charge"></i> Thao tác nhanh
+                        </h3>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <a href="/products" class="btn btn-outline-primary w-100 py-3">
+                                    <i class="bi bi-box-seam d-block fs-3 mb-2"></i>
+                                    Tất cả sản phẩm
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/products/new" class="btn btn-outline-success w-100 py-3">
+                                    <i class="bi bi-plus-square d-block fs-3 mb-2"></i>
+                                    Thêm sản phẩm
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/api/products" class="btn btn-outline-info w-100 py-3" target="_blank">
+                                    <i class="bi bi-code-slash d-block fs-3 mb-2"></i>
+                                    REST API
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/products/search" class="btn btn-outline-warning w-100 py-3">
+                                    <i class="bi bi-funnel d-block fs-3 mb-2"></i>
+                                    Lọc sản phẩm
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-4">
+                            <i class="bi bi-info-circle text-primary"></i> Về hệ thống
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                Quản lý sản phẩm toàn diện
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                Giao diện thân thiện, dễ sử dụng
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                Tìm kiếm và lọc nhanh chóng
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                REST API đầy đủ
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                Bảo mật và ổn định
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-4">
+                            <i class="bi bi-gear text-warning"></i> Công nghệ sử dụng
+                        </h4>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded text-center">
+                                    <i class="bi bi-cup-hot fs-2 text-danger"></i>
+                                    <p class="mb-0 mt-2 fw-bold">Spring Boot 4.0</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded text-center">
+                                    <i class="bi bi-database fs-2 text-primary"></i>
+                                    <p class="mb-0 mt-2 fw-bold">MySQL</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded text-center">
+                                    <i class="bi bi-file-code fs-2 text-success"></i>
+                                    <p class="mb-0 mt-2 fw-bold">Thymeleaf</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded text-center">
+                                    <i class="bi bi-bootstrap fs-2 text-purple"></i>
+                                    <p class="mb-0 mt-2 fw-bold">Bootstrap 5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="bi bi-heart-fill text-danger"></i> 
+                Website Bán Hàng - Hệ thống quản lý sản phẩm
+            </p>
+            <p class="mb-0 mt-2 text-muted">
+                <small>© 2026 - Powered by Spring Boot & MySQL</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
